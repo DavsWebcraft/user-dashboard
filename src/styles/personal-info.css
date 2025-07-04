@@ -1,0 +1,157 @@
+:root {
+  --clr-bg: #fff;
+  --clr-primary: #5633ff;
+  --clr-border: #e0e0e0;
+  --clr-text: #1d1d1d;
+  --fs-base: 1rem;
+  --radius: 1rem;
+}
+
+/* full‑page overlay to center card */
+.pi-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #fbfbfb;
+  padding: 2rem;
+}
+
+/* white rounded card */
+.pi-card {
+  /* width: 25rem; 352 px */
+  background: #ffffff;
+  padding: 2rem;
+  display: grid;
+  gap: 1.5rem;
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+}
+
+/* header row */
+.pi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pi-title {
+  font: 600 1.125rem/1.2 "Inter", sans-serif;
+  margin: 0;
+}
+
+.pi-step {
+  color: #6bc62d;
+  font-weight: 700;
+}
+
+/* input field, shared */
+.pi-field {
+  border: 1px solid var(--clr-border);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: var(--fs-base);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+}
+
+.pi-field input,
+.pi-field select {
+  border: none;
+  flex: 1;
+  font-size: var(--fs-base);
+  outline: none;
+}
+
+.pi-field select {
+  max-width: 4.5rem;
+  background: transparent;
+}
+
+/* radio row */
+.pi-radio-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+.pi-radio-group input[type="radio"] {
+  accent-color: var(--clr-primary);
+}
+
+/* info note */
+.pi-note {
+  font-size: 0.75rem;
+  opacity: 0.65;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0.5rem;
+}
+
+.pi-note .icon {
+  font-size: 0.875rem;
+}
+
+/* hint under birthday */
+.pi-hint {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* primary button */
+.pi-btn {
+  padding: 1rem;
+  width: 100%;
+  background: var(--clr-primary);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.location-btn {
+  padding: 1rem;
+  width: 100%;
+  background: #fff;
+  color: #5932ea;
+  border: 1px solid #fcd9e8;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.address-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.address-col {
+  flex: 1;
+}
+
+@media (max-width: 26.5625rem) {
+  .pi-card {
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+  .pi-title {
+    font-size: 1rem;
+  }
+  .pi-field,
+  .pi-btn {
+    font-size: 0.9375rem;
+  }
+
+  .address-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,366 @@
+.dashboard {
+  /* local design tokens */
+  --primary: #5932ea;
+  --primary-light: #eeebff;
+  --danger: #ff4545;
+  --success: #16c098;
+  --bg: #f5f6fa;
+  --text: #3a3f55;
+  --muted: #8a8d9f;
+
+  --gap: 2.4em;
+  --radius: 1.2em;
+
+  font-size: 62.5%; /* 1em = 10px inside dashboard */
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+}
+
+/* limit resets to dashboard */
+.dashboard button,
+.dashboard input,
+.dashboard select {
+  font-family: inherit;
+  font-size: 1.4em;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* LAYOUT */
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* SIDEBAR */
+.sidebar {
+  flex: 0 0 18em;
+  background: #ffffff;
+  border-right: 0.1em solid #e5e7ef;
+  display: flex;
+  flex-direction: column;
+  transition: flex-basis 0.3s ease;
+}
+.sidebar.collapsed {
+  flex-basis: 6em;
+}
+
+.toggle {
+  align-self: flex-end;
+  margin: 1.6em;
+  background: var(--primary-light);
+  border-radius: 50%;
+  width: 3.2em;
+  height: 3.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.brand {
+  font-size: 2.4em;
+  margin: 0 0 3.2em 0;
+  padding-top: 2.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.brand span {
+  color: var(--muted);
+  font-size: 1.2em;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav li {
+  display: flex;
+  align-items: center;
+  gap: 1.6em;
+  padding: 1.2em 2em;
+  font-size: 1.5em;
+  cursor: pointer;
+  border-left: 0.3em solid transparent;
+  transition: background 0.2s;
+}
+.nav li:hover,
+.active {
+  background: var(--primary-light);
+  border-color: var(--primary);
+}
+
+.collapsed .nav li span {
+  display: none;
+}
+
+.upgrade {
+  margin: auto 2em 0 2em;
+  padding: 0;
+  background: none;
+}
+.upgradeImg {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  padding: 2em;
+  font-size: 1.3em;
+}
+.collapsed .profileInfo {
+  display: none;
+}
+.profile img {
+  width: 3.6em;
+  height: 3.6em;
+  border-radius: 50%;
+}
+.logout {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+/* MAIN CONTENT */
+.content {
+  flex: 1 1 auto;
+  padding: 3.2em 4%;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin-bottom: 3.2em;
+}
+.header h2 {
+  font-size: 2.4em;
+  font-weight: 600;
+  margin: 0;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  background: #ffffff;
+  padding: 1em 1.6em;
+  border-radius: 5em;
+  border: 0.1em solid #e5e7ef;
+}
+.searchBox input {
+  width: 16em;
+}
+.small input {
+  width: 12em;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  gap: var(--gap);
+  margin-bottom: 4em;
+}
+.card {
+  background: #ffffff;
+  flex: 1 1 28%;
+  min-width: 22em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 1em;
+  border-radius: var(--radius);
+  border: 0.1em solid #e5e7ef;
+}
+.card h3 {
+  margin: 0.4em 0;
+  font-size: 2em;
+}
+.up {
+  color: var(--success);
+  font-size: 1.2em;
+}
+.down {
+  color: var(--danger);
+  font-size: 1.2em;
+}
+.icon {
+  width: 4.8em;
+  height: 4.8em;
+  border-radius: 50%;
+  padding-bottom: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* avatars */
+.avatars {
+  display: flex;
+  margin-top: 1em;
+}
+.avatars img {
+  width: 2.8em;
+  height: 2.8em;
+  border-radius: 50%;
+  border: 0.2em solid #ffffff;
+  margin-left: -1em;
+}
+.avatars img:first-child {
+  margin-left: 0;
+}
+
+/* TABLE */
+.tableWrap {
+  background: #ffffff;
+  padding: 3.2em 2.4em;
+  border-radius: var(--radius);
+  border: 0.1em solid #e5e7ef;
+}
+.tableHeader {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  flex-wrap: wrap;
+  margin-bottom: 2em;
+  justify-content: space-between;
+}
+.tableHeader h3 {
+  margin: 0;
+  font-size: 1.8em;
+}
+.sub {
+  color: var(--success);
+  font-size: 1.4em;
+}
+.scroll {
+  overflow-x: auto;
+  width: 100%;
+}
+.scroll table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.4em;
+}
+.scroll th,
+.scroll td {
+  text-align: left;
+  padding: 1.6em 1.2em;
+  white-space: nowrap;
+}
+.scroll thead {
+  background: var(--primary-light);
+}
+.scroll tbody tr:nth-child(even) {
+  background: var(--bg);
+}
+.badge {
+  padding: 0.4em 1.2em;
+  font-size: 1.2em;
+  font-weight: 600;
+  display: inline-block;
+  width: 6em;
+  text-align: center;
+}
+
+.active {
+  background: rgba(22, 192, 152, 0.16);
+  color: var(--success);
+}
+
+.inactive {
+  background: rgba(255, 71, 71, 0.16);
+  color: var(--danger);
+}
+
+.tableFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2.4em;
+  flex-wrap: wrap;
+  gap: 2em;
+  font-size: 1.3em;
+  color: var(--muted);
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+}
+.pagination button {
+  width: 3.2em;
+  height: 3.2em;
+  border-radius: 0.6em;
+  border: 0.1em solid #e5e7ef;
+  cursor: pointer;
+}
+.current,
+.pagination button:hover {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 64em) {
+  /* ≤ 1024px */
+  .sidebar.collapsed {
+    flex-basis: 0;
+    transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+  }
+  .sidebar.collapsed.open {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 48em) {
+  /* ≤ 768px */
+  .dashboard {
+    font-size: 56.25%; /* 1em = 9px */
+  }
+  .card {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 26.5em) {
+  /* ≤ 425px */
+  .dashboard {
+    font-size: 50%; /* 1em = 8px */
+  }
+  .sidebar {
+    flex-basis: 100%;
+    flex-direction: row;
+    height: auto;
+    border-right: none;
+    border-bottom: 0.1em solid #e5e7ef;
+  }
+  .toggle {
+    display: none;
+  }
+  .content {
+    padding: 2.4em 4%;
+  }
+  .searchBox input,
+  .small input {
+    width: 100%;
+  }
+}

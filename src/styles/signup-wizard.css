@@ -1,0 +1,406 @@
+:root {
+  --clr-bg: #ffffff;
+  --clr-primary: #5633ff; /* button purple from screenshot */
+  --clr-border: #e0e0e0;
+  --clr-text: #1d1d1d;
+  --fs-base: 1rem; /* 16px */
+  --radius-card: 1rem; /* 16px */
+}
+
+/* overlay keeps card centred */
+.wizard‑overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  background: #fbfbfb;
+  padding: 2rem;
+}
+
+/* the white card (344×?) */
+.wizard‑card {
+  width: 22rem; /* 344 px / 16 = 21.5 rem  */
+  background: #ffffff;
+  border-radius: var(--radius-card);
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
+  padding: 1.2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+/* top tabs */
+.wizard‑tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wizard‑tabs button {
+  font: 600 1rem/1 var(--font, "Inter", sans-serif);
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: var(--clr-text);
+  opacity: 0.6;
+}
+
+.wizard‑tabs .active {
+  opacity: 1;
+  border-bottom: 0.15rem solid #f9bbd5;
+}
+
+.wizard‑tabs .close {
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.close {
+  color: #1d1d1d;
+  font-size: 2rem !important;
+  border: none;
+  background-color: #ffffff;
+}
+
+/* social icons row */
+.social‑row {
+  display: flex;
+  gap: 2rem;
+}
+
+.social‑row img {
+  width: 1.75rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.muted {
+  color: #aea8ab;
+  margin: 0;
+}
+
+/* form styles */
+.form label {
+  display: flex;
+  gap: 0.5rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.form input[type="email"],
+.form input[type="password"] {
+  width: 94%;
+  /* padding: 0.75rem 1rem; */
+  border-radius: 0.9rem;
+  font-size: var(--fs-base);
+}
+
+.eye {
+  position: absolute; /* eye icon placeholder */
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  background: url("https://cdn.jsdelivr.net/npm/heroicons@latest/24/solid/eye.svg")
+    no-repeat center / contain;
+}
+
+.hint {
+  font-size: 0.875rem;
+  opacity: 0.6;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+.sumit-button {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: var(--clr-primary);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.news‑checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  margin: 0.75rem 0;
+}
+
+.terms {
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.error {
+  color: crimson;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.field {
+  display: flex; /* row: input area + icon */
+  align-items: center;
+  border: 1px solid var(--clr-border);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: #fff;
+  gap: 0.5rem;
+  position: relative;
+  margin: 1.5rem 0.3rem;
+}
+
+.field:focus-within {
+  border-color: var(--clr-primary);
+  box-shadow: 0 0 0 2px rgba(86, 51, 255, 0.15);
+}
+
+/* column flex inside border */
+.field-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* take remaining width */
+}
+
+.field-label {
+  font-size: 0.75rem;
+  color: var(--clr-text);
+  opacity: 0.6;
+  line-height: 1;
+  margin-bottom: 1rem !important;
+}
+
+.field input {
+  border: none;
+  outline: none;
+  font-size: var(--fs-base);
+  width: 100%;
+  padding: 0; /* already padded by .field */
+}
+
+.field input::placeholder {
+  color: var(--clr-text);
+  opacity: 0.8;
+}
+
+/* right‑side icons */
+.icon-right,
+.eye-btn {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.icon-right img {
+  width: 100%;
+  height: 100%;
+}
+
+/* checkbox row */
+.news-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.news-row input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--clr-primary);
+}
+
+.field {
+  display: flex; /* row: input area + icon */
+  align-items: center;
+  border: 1px solid var(--clr-border);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: #fff;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.field:focus-within {
+  border-color: var(--clr-primary);
+  box-shadow: 0 0 0 2px rgba(86, 51, 255, 0.15);
+}
+
+/* column flex inside border */
+.field-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* take remaining width */
+}
+
+.field-label {
+  font-size: 0.75rem;
+  color: var(--clr-text);
+  opacity: 0.6;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.field input {
+  border: none;
+  outline: none;
+  font-size: var(--fs-base);
+  width: 100%;
+  padding: 0; /* already padded by .field */
+}
+
+.field input::placeholder {
+  color: var(--clr-text);
+  opacity: 0.8;
+}
+
+/* right‑side icons */
+.icon-right,
+.eye-btn {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.icon-right img {
+  width: 100%;
+  height: 100%;
+}
+
+/* checkbox row */
+.news-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.news-row input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--clr-primary);
+}
+
+/* ---------- wizard header (for step 2) ---------- */
+.wizard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wizard-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.step-count {
+  font-size: 0.875rem;
+  color: var(--clr-primary);
+}
+
+/* ---------- gender radio buttons ---------- */
+.gender-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.radio input[type="radio"] {
+  accent-color: var(--clr-primary);
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+/* ---------- note with info icon ---------- */
+.note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin: 0.5rem 0;
+}
+
+.info-icon {
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+/* ---------- phone field (select + input) ---------- */
+.phone-field {
+  gap: 0.5rem;
+}
+
+.phone-field select {
+  border: none;
+  font-size: var(--fs-base);
+  background: transparent;
+  width: 4.5rem;
+}
+
+/* ---------- birthday field ---------- */
+.birthday-field {
+  position: relative;
+}
+
+.optional-tag {
+  position: absolute;
+  right: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.calendar-icon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.1rem;
+}
+
+/* ensure input's text doesn't underlap the icons */
+.birthday-field input {
+  padding-right: 4rem;
+}
+
+/* ---------- labels ---------- */
+.label {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* reuse .field, .primary-btn, .hint from earlier rules */
+
+/* simple responsiveness */
+@media (min-width: 48rem) {
+  .wizard‑card {
+    width: 30rem;
+  } /* a bit wider on desktops */
+}
