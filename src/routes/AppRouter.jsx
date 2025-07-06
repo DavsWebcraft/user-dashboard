@@ -1,4 +1,3 @@
-// src/routes/AppRouter.jsx
 import { Routes, Route, Navigate } from "react-router-dom";
 import SignupWizard from "../pages/SignupWizard/SignupWizard";
 import LoginPage from "../pages/LoginPage";
@@ -20,7 +19,6 @@ export default function AppRouter() {
         }
       />
 
-      {/* any unknown URL -> signup */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

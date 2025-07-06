@@ -13,14 +13,12 @@ import {
 } from "react-icons/fi";
 import styles from "../styles/dashboard.module.css";
 
-// merge classnames ➜ cn("base", condition && "extra")
 const cn = (...c) => c.filter(Boolean).join(" ");
 
 // extract username for greeting
 const getUsername = (user) => {
-  if (!user) return "User";
-  if (user.displayName) return user.displayName.split(" ")[0];
-  if (user.email) return user.email.split("@")[0];
+  // Always derive from the email prefix (everything before @)
+  if (user?.email) return user.email.split("@")[0];
   return "User";
 };
 
@@ -29,7 +27,6 @@ export default function Dashboard({ user }) {
   const [collapsed, setCollapsed] = useState(false);
   const toggleSidebar = () => setCollapsed((p) => !p);
 
-  // demo rows – swap with live data ↓↓↓
   const rows = [
     {
       name: "Jane Cooper",

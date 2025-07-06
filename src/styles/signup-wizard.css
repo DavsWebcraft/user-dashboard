@@ -1,13 +1,13 @@
 :root {
   --clr-bg: #ffffff;
-  --clr-primary: #5633ff; /* button purple from screenshot */
+  --clr-primary: #5633ff; 
   --clr-border: #e0e0e0;
   --clr-text: #1d1d1d;
-  --fs-base: 1rem; /* 16px */
-  --radius-card: 1rem; /* 16px */
+  --fs-base: 1rem; 
+  --radius-card: 1rem; 
 }
 
-/* overlay keeps card centred */
+
 .wizard‑overlay {
   display: flex;
   align-items: center;
@@ -17,9 +17,8 @@
   padding: 2rem;
 }
 
-/* the white card (344×?) */
 .wizard‑card {
-  width: 22rem; /* 344 px / 16 = 21.5 rem  */
+  width: 22rem; 
   background: #ffffff;
   border-radius: var(--radius-card);
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
@@ -28,7 +27,6 @@
   gap: 1rem;
 }
 
-/* top tabs */
 .wizard‑tabs {
   display: flex;
   justify-content: space-between;
@@ -97,7 +95,7 @@
 }
 
 .eye {
-  position: absolute; /* eye icon placeholder */
+  position: absolute; 
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
@@ -140,13 +138,14 @@
 }
 
 .error {
-  color: crimson;
+  color: #ff4545;
   font-size: 0.875rem;
   text-align: center;
+  margin: 0.5rem 0;
 }
 
 .field {
-  display: flex; /* row: input area + icon */
+  display: flex; 
   align-items: center;
   border: 1px solid var(--clr-border);
   border-radius: 0.5rem;
@@ -162,11 +161,10 @@
   box-shadow: 0 0 0 2px rgba(86, 51, 255, 0.15);
 }
 
-/* column flex inside border */
 .field-content {
   display: flex;
   flex-direction: column;
-  flex: 1; /* take remaining width */
+  flex: 1; 
 }
 
 .field-label {
@@ -182,7 +180,7 @@
   outline: none;
   font-size: var(--fs-base);
   width: 100%;
-  padding: 0; /* already padded by .field */
+  padding: 0; 
 }
 
 .field input::placeholder {
@@ -223,7 +221,7 @@
 }
 
 .field {
-  display: flex; /* row: input area + icon */
+  display: flex; 
   align-items: center;
   border: 1px solid var(--clr-border);
   border-radius: 0.5rem;
@@ -238,11 +236,11 @@
   box-shadow: 0 0 0 2px rgba(86, 51, 255, 0.15);
 }
 
-/* column flex inside border */
+
 .field-content {
   display: flex;
   flex-direction: column;
-  flex: 1; /* take remaining width */
+  flex: 1;
 }
 
 .field-label {
@@ -258,7 +256,7 @@
   outline: none;
   font-size: var(--fs-base);
   width: 100%;
-  padding: 0; /* already padded by .field */
+  padding: 0; 
 }
 
 .field input::placeholder {
@@ -396,11 +394,9 @@
   font-weight: 600;
 }
 
-/* reuse .field, .primary-btn, .hint from earlier rules */
 
-/* simple responsiveness */
 @media (min-width: 48rem) {
   .wizard‑card {
     width: 30rem;
-  } /* a bit wider on desktops */
+  } 
 }

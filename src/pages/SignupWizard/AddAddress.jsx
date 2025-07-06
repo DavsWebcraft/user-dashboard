@@ -1,4 +1,3 @@
-// src/pages/SignupWizard/StepAddAddress.jsx
 import { useState } from "react";
 
 export default function StepAddAddress({ onNext, onBack }) {

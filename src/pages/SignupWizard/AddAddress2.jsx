@@ -11,7 +11,6 @@ export default function StepAddAddress2({ onNext, onBack }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    // Save to context or localStorage here if needed
     const addressInfo = {
       street,
       apartment,
@@ -26,11 +25,11 @@ export default function StepAddAddress2({ onNext, onBack }) {
 
   return (
     <div className="pi-overlay">
-      <div className="pi-card" style={{ maxWidth: "30rem" }}>
+      <div className="pi-card address2-card">
         {/* header */}
         <header className="pi-header">
           <h2 className="pi-title">
-            Add address <span className="pi-step">3 of 3</span>
+            Add address <span className="pi-step">3 of 3</span>
           </h2>
           <button type="button" className="close" onClick={onBack}>
             ×
@@ -73,23 +72,27 @@ export default function StepAddAddress2({ onNext, onBack }) {
 
           {/* state & zip */}
           <div className="address-row">
-            <div className="pi-field address-col">
-              <input
-                type="text"
-                placeholder="State"
-                required
-                value={state}
-                onChange={(e) => setState(e.target.value)}
-              />
+            <div className="address-col">
+              <div className="pi-field">
+                <input
+                  type="text"
+                  placeholder="State"
+                  required
+                  value={state}
+                  onChange={(e) => setState(e.target.value)}
+                />
+              </div>
             </div>
-            <div className="pi-field address-col">
-              <input
-                type="text"
-                placeholder="Zip code"
-                required
-                value={zip}
-                onChange={(e) => setZip(e.target.value)}
-              />
+            <div className="address-col">
+              <div className="pi-field">
+                <input
+                  type="text"
+                  placeholder="Zip code"
+                  required
+                  value={zip}
+                  onChange={(e) => setZip(e.target.value)}
+                />
+              </div>
             </div>
           </div>
 

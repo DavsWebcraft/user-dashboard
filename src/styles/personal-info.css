@@ -15,17 +15,19 @@
   min-height: 100vh;
   background: #fbfbfb;
   padding: 2rem;
+  overflow: hidden;
 }
 
 /* white rounded card */
 .pi-card {
-  /* width: 25rem; 352 px */
   background: #ffffff;
   padding: 2rem;
   display: grid;
   gap: 1.5rem;
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
+  width: 100%;
+  max-width: 30rem;
 }
 
 /* header row */
@@ -129,7 +131,6 @@
 }
 
 .address-row {
-  display: flex;
   gap: 1rem;
 }
 
@@ -137,21 +138,78 @@
   flex: 1;
 }
 
+.error {
+  color: #ff4545;
+  font-size: 0.875rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+
 @media (max-width: 26.5625rem) {
-  .pi-card {
-    padding: 1.25rem;
-    gap: 1rem;
+  .pi-overlay {
+    padding: 1rem;
   }
+
+  .pi-card {
+    padding: 1.5rem;
+    gap: 1rem;
+    margin: 0 1rem;
+    border-radius: 0.75rem;
+  }
+
   .pi-title {
     font-size: 1rem;
   }
+
   .pi-field,
   .pi-btn {
     font-size: 0.9375rem;
   }
 
   .address-row {
-    flex-direction: column;
+    flex-direction: column !important;
     gap: 1rem;
+  }
+}
+
+/* Specific styles for AddAddress2 screen */
+.address2-card {
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 26.5625rem) {
+  .address2-card {
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .pi-overlay {
+    padding: 0.75rem;
+  }
+
+  .pi-card,
+  .address2-card {
+    padding: 1.25rem;
+    margin: 0 0.75rem;
+  }
+
+  .pi-field {
+    padding: 0.625rem 0.875rem;
+  }
+
+  .pi-btn {
+    padding: 0.875rem;
+  }
+
+  .address-row {
+    margin: 0 -0.375rem;
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  .address-col {
+    padding: 0 0.375rem;
   }
 }

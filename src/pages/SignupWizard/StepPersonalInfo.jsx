@@ -1,4 +1,3 @@
-// src/pages/SignupWizard/StepPersonalInfo.jsx
 import { useState } from "react";
 
 export default function StepPersonalInfo({ onNext, onBack }) {
@@ -7,10 +6,31 @@ export default function StepPersonalInfo({ onNext, onBack }) {
   const [countryCode, setCountryCode] = useState("+598");
   const [phone, setPhone] = useState("");
   const [birthday, setBirthday] = useState("");
+  const [error, setError] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    const personalInfo = {
+      fullName,
+      gender,
+      phone: countryCode + phone,
+      birthday,
+    };
+    localStorage.setItem("personalInfo", JSON.stringify(personalInfo));
+
     onNext();
+  }
+
+  function handlePhoneChange(e) {
+    const value = e.target.value;
+    // Only allow numbers
+    if (/^\d*$/.test(value)) {
+      setPhone(value);
+      setError("");
+    } else {
+      setError("Please enter numbers only");
+    }
   }
 
   return (
@@ -19,7 +39,7 @@ export default function StepPersonalInfo({ onNext, onBack }) {
         {/* header */}
         <header className="pi-header">
           <h2 className="pi-title">
-            Personal information <span className="pi-step">2 of 3</span>
+            Personal information <span className="pi-step">2 of 3</span>
           </h2>
           <button type="button" className="close" onClick={onBack}>
             ×
@@ -49,7 +69,7 @@ export default function StepPersonalInfo({ onNext, onBack }) {
                 checked={gender === "male"}
                 onChange={(e) => setGender(e.target.value)}
               />
-               Male
+              Male
             </label>
             <label>
               <input
@@ -59,7 +79,7 @@ export default function StepPersonalInfo({ onNext, onBack }) {
                 checked={gender === "female"}
                 onChange={(e) => setGender(e.target.value)}
               />
-               Female
+              Female
             </label>
           </div>
 
@@ -84,9 +104,17 @@ export default function StepPersonalInfo({ onNext, onBack }) {
               placeholder="Phone number"
               required
               value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              onChange={handlePhoneChange}
             />
           </div>
+          {error && (
+            <p
+              className="error"
+              style={{ color: "red", marginTop: "-1rem", fontSize: "0.875rem" }}
+            >
+              {error}
+            </p>
+          )}
 
           {/* birthday */}
           <div className="pi-field">

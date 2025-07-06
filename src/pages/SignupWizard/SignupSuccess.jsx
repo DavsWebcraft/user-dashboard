@@ -1,11 +1,10 @@
-// src/pages/SignupWizard/SignupSuccess.jsx
 import { useNavigate } from "react-router-dom";
 
 export default function SignupSuccess() {
   const navigate = useNavigate();
 
   function handleGoToLogin() {
-    navigate("/login"); // Adjust route as needed
+    navigate("/login");
   }
 
   return (

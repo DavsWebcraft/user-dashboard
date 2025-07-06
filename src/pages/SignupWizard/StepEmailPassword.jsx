@@ -13,7 +13,7 @@ export default function StepEmailPassword({ onNext }) {
     e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      onNext(); // advance to Personal‑Info slide
+      onNext();
     } catch (err) {
       setError(err.message);
     }

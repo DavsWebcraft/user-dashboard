@@ -1,4 +1,4 @@
-// src/pages/LoginPage.jsx
+
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/services/firebase";
@@ -17,7 +17,7 @@ export default function LoginPage() {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/dashboard"); // ✅ Navigate to dashboard after login
+      navigate("/dashboard"); 
     } catch (err) {
       setError("Invalid credentials. Please try again.");
     }
