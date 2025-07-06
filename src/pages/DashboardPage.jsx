@@ -200,7 +200,7 @@ export default function Dashboard({ user }) {
               <h3>All Customers</h3>
               <span className={styles.sub}>Active Members</span>
             </div>
-            <div style={{ display: "flex", gap: "3rem" }}>
+            <div className="stress" style={{ display: "flex" }}>
               <label className={cn(styles.searchBox, styles.small)}>
                 <FiSearch />
                 <input type="search" placeholder="Search" />
