@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { onAuthStateChanged } from "firebase/auth";
 import {
   FiChevronLeft,
   FiChevronRight,
@@ -12,19 +13,35 @@ import {
   FiSearch,
 } from "react-icons/fi";
 import styles from "../styles/dashboard.module.css";
+import { auth } from "../services/firebase";
 
 const cn = (...c) => c.filter(Boolean).join(" ");
 
-// extract username for greeting
-const getUsername = (user) => {
-  // Always derive from the email prefix (everything before @)
-  if (user?.email) return user.email.split("@")[0];
-  return "User";
-};
-
-export default function Dashboard({ user }) {
-  const firstName = getUsername(user);
+export default function Dashboard() {
+  const [firebaseUser, setFirebaseUser] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [collapsed, setCollapsed] = useState(false);
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (u) => setFirebaseUser(u));
+    setTimeout(() => setLoading(false), 800);
+
+    return unsub; // clean up on unmount
+  }, []);
+
+  if (loading) {
+    return (
+      <div className={styles.loader}>
+        <div className={styles.spinner} />
+      </div>
+    );
+  }
+
+  const firstName =
+    firebaseUser?.displayName?.split(" ")[0] ??
+    firebaseUser?.email?.split("@")[0] ??
+    "User";
+
   const toggleSidebar = () => setCollapsed((p) => !p);
 
   const rows = [
@@ -120,7 +137,7 @@ export default function Dashboard({ user }) {
 
         <div className={styles.profile}>
           <img
-            src={user?.photoURL || "https://i.pravatar.cc/100"}
+            src={firebaseUser?.photoURL || "https://i.pravatar.cc/100"}
             alt={firstName}
           />
           <div className={styles.profileInfo}>

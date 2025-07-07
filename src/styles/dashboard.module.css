@@ -1,3 +1,26 @@
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f5f6fa;
+}
+
+.spinner {
+  width: 6em;
+  height: 6em;
+  border: 0.6em solid #e5e7ef;
+  border-top-color: #5932ea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .dashboard {
   /* local design tokens */
   --primary: #5932ea;
