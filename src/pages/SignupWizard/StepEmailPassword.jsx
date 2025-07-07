@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../services/firebase";
 import "../../styles/signup-wizard.css";
@@ -8,6 +9,8 @@ export default function StepEmailPassword({ onNext }) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [showPwd, setShowPwd] = useState(false);
+
+  const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -25,7 +28,7 @@ export default function StepEmailPassword({ onNext }) {
         <header className="wizard‑tabs">
           <div>
             <button className="active">Register</button>
-            <button disabled>Log in</button>
+            <button onClick={() => navigate("/login")}>Log in</button>
           </div>
           <span className="close">×</span>
         </header>

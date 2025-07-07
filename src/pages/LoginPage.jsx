@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/services/firebase";
@@ -17,7 +16,7 @@ export default function LoginPage() {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/dashboard"); 
+      navigate("/dashboard");
     } catch (err) {
       setError("Invalid credentials. Please try again.");
     }
@@ -29,7 +28,7 @@ export default function LoginPage() {
         {/* Tabs */}
         <header className="wizard‑tabs">
           <div>
-            <button disabled>Register</button>
+            <button onClick={() => navigate("/")}>Register</button>
             <button className="active">Log in</button>
           </div>
           <span className="close" onClick={() => navigate("/")}>
