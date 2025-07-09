@@ -18,7 +18,7 @@ export default function StepEmailPassword({ onNext }) {
       await createUserWithEmailAndPassword(auth, email, password);
       onNext();
     } catch (err) {
-      setError(err.message);
+      setError("Email address already exist.");
     }
   }
 
