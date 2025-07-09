@@ -38,21 +38,9 @@ export default function LoginPage() {
 
         {/* Social Icons */}
         <section className="social‑row">
-          <img
-            src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/apple.svg"
-            alt="Apple"
-            className="icon"
-          />
-          <img
-            src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/facebook.svg"
-            alt="Facebook"
-            className="icon"
-          />
-          <img
-            src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/google.svg"
-            alt="Google"
-            className="icon"
-          />
+          <img src="/apple_logo.png" alt="Apple" className="icon" />
+          <img src="/facebook_logo.png" alt="Facebook" className="icon big" />
+          <img src="/google_logo.png" alt="Google" className="icon" />
         </section>
 
         <p className="small muted">or login with email</p>

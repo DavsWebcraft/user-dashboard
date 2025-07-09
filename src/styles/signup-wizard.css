@@ -1,12 +1,11 @@
 :root {
   --clr-bg: #ffffff;
-  --clr-primary: #5633ff; 
+  --clr-primary: #5633ff;
   --clr-border: #e0e0e0;
   --clr-text: #1d1d1d;
-  --fs-base: 1rem; 
-  --radius-card: 1rem; 
+  --fs-base: 1rem;
+  --radius-card: 1rem;
 }
-
 
 .wizard‑overlay {
   display: flex;
@@ -18,7 +17,7 @@
 }
 
 .wizard‑card {
-  width: 22rem; 
+  width: 22rem;
   background: #ffffff;
   border-radius: var(--radius-card);
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
@@ -71,6 +70,11 @@
   width: 1.75rem;
   height: 1.5rem;
   cursor: pointer;
+  border-radius: 2rem;
+}
+
+.big {
+  height: 1.7rem !important;
 }
 
 .muted {
@@ -95,7 +99,7 @@
 }
 
 .eye {
-  position: absolute; 
+  position: absolute;
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
@@ -145,7 +149,7 @@
 }
 
 .field {
-  display: flex; 
+  display: flex;
   align-items: center;
   border: 1px solid var(--clr-border);
   border-radius: 0.5rem;
@@ -164,7 +168,7 @@
 .field-content {
   display: flex;
   flex-direction: column;
-  flex: 1; 
+  flex: 1;
 }
 
 .field-label {
@@ -180,7 +184,7 @@
   outline: none;
   font-size: var(--fs-base);
   width: 100%;
-  padding: 0; 
+  padding: 0;
 }
 
 .field input::placeholder {
@@ -221,7 +225,7 @@
 }
 
 .field {
-  display: flex; 
+  display: flex;
   align-items: center;
   border: 1px solid var(--clr-border);
   border-radius: 0.5rem;
@@ -235,7 +239,6 @@
   border-color: var(--clr-primary);
   box-shadow: 0 0 0 2px rgba(86, 51, 255, 0.15);
 }
-
 
 .field-content {
   display: flex;
@@ -256,7 +259,7 @@
   outline: none;
   font-size: var(--fs-base);
   width: 100%;
-  padding: 0; 
+  padding: 0;
 }
 
 .field input::placeholder {
@@ -394,9 +397,8 @@
   font-weight: 600;
 }
 
-
 @media (min-width: 48rem) {
   .wizard‑card {
     width: 30rem;
-  } 
+  }
 }
